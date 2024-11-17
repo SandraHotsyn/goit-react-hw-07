@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import { useId } from "react";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
@@ -36,7 +36,7 @@ export default function ContactForm() {
     >
       <Form className={css.formContainer}>
         <div className={css.formWrap}>
-          <label htmlFor={userNameId}>Ім'я</label>
+          <label htmlFor={userNameId}>Імя</label>
           <Field type="text" name="name" id={userNameId} />
           <ErrorMessage name="name" component="span" />
         </div>

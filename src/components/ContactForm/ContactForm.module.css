@@ -38,11 +38,6 @@ input:focus {
   border-color: #201a1a;
 }
 
-span {
-  color: #ff4d4d;
-  font-size: 12px;
-}
-
 .button {
   padding: 10px 15px;
   font-size: 16px;
