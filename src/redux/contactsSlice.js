@@ -10,7 +10,6 @@ const contactsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Fetch Contacts
       .addCase(fetchContacts.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -23,7 +22,6 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Add Contact
       .addCase(addContact.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -36,7 +34,6 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Delete Contact
       .addCase(deleteContact.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -54,13 +51,11 @@ const contactsSlice = createSlice({
   },
 });
 
-// Базові селектори
 export const selectContacts = (state) => state.contacts.items;
 export const selectLoading = (state) => state.contacts.loading;
 export const selectError = (state) => state.contacts.error;
 export const selectFilter = (state) => state.filters.name;
 
-// Мемоізований селектор для відфільтрованих контактів
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
